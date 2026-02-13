@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Achuuu ❤️</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+body{
+    overflow:hidden;
+    height:100vh;
+    width:100vw;
+    background: linear-gradient(135deg,#ffd6e8,#fbe3ff,#fff0f6);
+}
+.screen{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.8s ease;
+}
+.active{
+    opacity:1;
+    pointer-events:auto;
+}
+h1,h2{
+    font-family:'Great Vibes', cursive;
+}
+.title{
+    font-size:3rem;
+    color:#ff4d88;
+    animation:fadeIn 2s ease;
+}
+.subtitle{
+    font-size:1.5rem;
+    margin-top:15px;
+    color:#444;
+}
+.button{
+    margin-top:30px;
+    padding:14px 28px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#ff6fa5,#ff9ecf);
+    color:white;
+    box-shadow:0 0 15px rgba(255,105,180,0.6);
+    transition:0.3s;
+}
+.button:hover{
+    transform:scale(1.08);
+}
+.glow{
+    animation:glow 1.5s infinite alternate;
+}
+@keyframes glow{
+    from{box-shadow:0 0 10px #ff69b4;}
+    to{box-shadow:0 0 25px #ff1493;}
+}
+.question{
+    font-size:1.8rem;
+    color:#ff2e7a;
+    font-family:'Great Vibes', cursive;
+}
+.options{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    width:90%;
+    max-width:400px;
+}
+.option-btn{
+    padding:12px;
+    border-radius:25px;
+    border:none;
+    background:#fff;
+    cursor:pointer;
+    font-size:16px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+textarea{
+    width:90%;
+    max-width:400px;
+    height:100px;
+    border-radius:15px;
+    border:none;
+    padding:10px;
+    margin-top:20px;
+}
+.small-no{
+    font-size:12px;
+    padding:5px 10px;
+    background:#ffcccc;
+    color:#000;
+}
+.yes-big{
+    font-size:24px;
+    padding:18px 40px;
+}
+.fade-text{
+    animation:fadeIn 1.5s ease;
+}
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+.letter{
+    max-width:600px;
+    font-size:18px;
+    line-height:1.8;
+    color:#333;
+    background:rgba(255,255,255,0.7);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+.exit{
+    margin-top:30px;
+    font-size:14px;
+    background:none;
+    border:none;
+    color:#555;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<!-- Screen 1 Opening -->
+<div class="screen active" id="s1">
+    <h1 class="title">Achuuu❤️</h1>
+    <p class="subtitle fade-text" id="line2" style="display:none;">This one is specially for you my babyyyy</p>
+    <p class="subtitle fade-text" id="line3" style="display:none;">HAPPY VALENTINE’S DAY MY LOVE💕</p>
+    <button class="button glow" onclick="next(2)">Continue 💖</button>
+</div>
+
+<!-- Ready Screen -->
+<div class="screen" id="s2">
+    <h2 class="question">I have a few little questions for you, my love… answer them honestly 💌</h2>
+    <button class="button glow" onclick="next(3)">My love would be pwefect, let's do this💘</button>
+</div>
+
+<!-- Q1 -->
+<div class="screen" id="q1">
+    <h2 class="question">What’s one habit we should build together?</h2>
+    <div class="options">
+        <button class="option-btn" onclick="showMsg('I am glad you choose honestly🫠', 'q2')">Making time for each other, no matter what</button>
+        <button class="option-btn" onclick="showMsg('I am glad you choose honestly🫠', 'q2')">Staying quiet</button>
+        <button class="option-btn" onclick="showMsg('I am glad you choose honestly🫠', 'q2')">Solve the problem on the next day</button>
+        <button class="option-btn" onclick="showMsg('I am glad you choose honestly🫠', 'q2')">Avoid communication with each other when things get hard</button>
+    </div>
+</div>
+
+<!-- Q2 -->
+<div class="screen" id="q2">
+    <h2 class="question">What’s something I say that always makes you smile?</h2>
+    <textarea placeholder="Type it here babyy… I’m listening ⭐"></textarea>
+    <button class="button" onclick="showMsg('Your words mean more than you know 💕','q3')">Finish ❤️</button>
+</div>
+
+<!-- Q3 -->
+<div class="screen" id="q3">
+    <h2 class="question">What’s a funny memory of us that still makes you laugh?</h2>
+    <textarea placeholder="Type it here babyy… I’m listening ⭐"></textarea>
+    <button class="button" onclick="showMsg('I love how even our silly moments become memories I want to keep forever 🥺','q4')">Finish ❤️</button>
+</div>
+
+<!-- Q4 -->
+<div class="screen" id="q4">
+    <h2 class="question">What’s one thing you want us to promise each other forever?</h2>
+    <div class="options">
+        <button class="option-btn" onclick="showMsg('This promise means more to me than you’ll ever realise🫠','q5')">Choosing each other, even on hard days</button>
+        <button class="option-btn" onclick="showMsg('This promise means more to me than you’ll ever realise🫠','q5')">Going to bed angry and fixing it the next day</button>
+        <button class="option-btn" onclick="showMsg('This promise means more to me than you’ll ever realise🫠','q5')">Running away from problems instead of fixing them</button>
+        <button class="option-btn" onclick="showMsg('This promise means more to me than you’ll ever realise🫠','q5')">Pretending everything is fine when it’s not</button>
+    </div>
+</div>
+
+<!-- Q5 Funny -->
+<div class="screen" id="q5">
+    <h2 class="question">Will you always give me the first and last bite of the food? 🍰❤️</h2>
+    <button class="button glow yes-big" onclick="next('transition')">YES 💖</button>
+    <button class="small-no" onclick="shakeNo()">No</button>
+    <p id="noText"></p>
+</div>
+
+<!-- Transition -->
+<div class="screen" id="transition">
+    <h2 class="question">All done with the questions… now listen to mine achuuu, here’s something from my heart just for you 💕</h2>
+    <button class="button glow" onclick="next('love1')">See it 💌</button>
+</div>
+
+<!-- Love Screens -->
+<div class="screen" id="love1">
+    <h2 class="question">The way you care for me, even in small things, even through my mood swings, makes me feel so loved🥹</h2>
+    <button class="button" onclick="next('love2')">Next 💌</button>
+</div>
+
+<div class="screen" id="love2">
+    <h2 class="question">You lift me up even on my toughest days, you are my biggest supporter and cheerleader💪🏻</h2>
+    <button class="button" onclick="next('love3')">Next 💌</button>
+</div>
+
+<div class="screen" id="love3">
+    <h2 class="question">Your smile, your laugh, your eyes… they’re my favorite parts of every day, Mooo🫠</h2>
+    <button class="button" onclick="next('love4')">Next 💌</button>
+</div>
+
+<div class="screen" id="love4">
+    <h2 class="question">I love every bit of this journey with you🫀</h2>
+    <button class="button" onclick="next('love5')">Next 💌</button>
+</div>
+
+<div class="screen" id="love5">
+    <h2 class="question">Thank you for loving me the way you do💕</h2>
+    <button class="button glow" onclick="next('preFinal')">Next 💌</button>
+</div>
+
+<!-- Pre Final -->
+<div class="screen" id="preFinal">
+    <h2 class="question">Alright, now get ready for the final question… this question decides your forever 😘</h2>
+    <button class="button glow" onclick="next('finalQ')">Ask me😉</button>
+</div>
+
+<!-- Final Question -->
+<div class="screen" id="finalQ">
+    <h1 class="title">AchuuuMooo… Will you be my Valentine forever? ❤️🌹</h1>
+    <button class="button glow yes-big" onclick="next('afterYes')">YES 💖</button>
+    <button class="small-no" onclick="shakeNo()">No</button>
+    <p id="noText2"></p>
+</div>
+
+<!-- After Yes -->
+<div class="screen" id="afterYes">
+    <h2 class="question">Your yes makes me so happy. And since you said yes, let me tell you something from my heart 💌… so listen closely…</h2>
+    <button class="button glow" onclick="next('letter')">Read 💌</button>
+</div>
+
+<!-- Final Letter -->
+<div class="screen" id="letter">
+    <div class="letter">
+        <h2>My Sweetestttt Boyfriend Achuuuu....❤️</h2>
+        <p>
+        10 months with you, and honestly, it still feels so special in the most beautiful way. Being with you has been the most peaceful part of my life.<br><br>
+        You didn’t just become my love, you became my comfort, my calm, and my happy place. And without even trying, you made these 10 months feel so meaningful to my heart.<br><br>
+        Every day with you feels like a dream, and You make my world brighter, my heart fuller, and me happier than I’ve ever been.<br><br>
+        I’m truly grateful for you, for us, and for these 10 months of love, patience, and little moments that mean everything to me🫂🥺🫀
+        <br><br>
+        Always yours.....<br><br>
+        Ponnuuuuhh🌷
+        </p>
+    </div>
+    <button class="exit" onclick="window.close()">Done reading, Exit</button>
+</div>
+
+<script>
+setTimeout(()=>{document.getElementById("line2").style.display="block";},2000);
+setTimeout(()=>{document.getElementById("line3").style.display="block";},3500);
+
+function next(id){
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+function showMsg(message,nextScreen){
+    alert(message);
+    next(nextScreen);
+}
+
+function shakeNo(){
+    alert("You are dead if you click that 😡");
+}
+</script>
+
+</body>
+</html>
