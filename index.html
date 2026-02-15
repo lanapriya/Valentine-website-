@@ -16,7 +16,7 @@
     font-family:'Poppins', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
 }
 body{
-    overflow:hidden;
+    overflow:auto;
     height:100vh;
     width:100vw;
     background: linear-gradient(135deg,#ffd6e8,#fbe3ff,#fff0f6);
@@ -136,6 +136,8 @@ textarea{
     backdrop-filter:blur(12px);
     margin:20px auto;
     text-align:left;
+    max-height:70vh;
+    overflow-y:auto; 
 }
 .exit{
     margin-top:30px;
@@ -146,10 +148,8 @@ textarea{
     cursor:pointer;
 }
     #letter{
-    overflow-y:auto;
-    justify-content:flex-start;
-    padding-top:80px;
-    padding-bottom:80px;
+    padding-top:20px;
+    padding-bottom:20px;
 }
 </style>
 </head>
@@ -183,15 +183,15 @@ textarea{
 <!-- Q2 -->
 <div class="screen" id="q2">
     <h2 class="question">What’s something I say that always makes you smile?</h2>
-    <textarea placeholder="Type it here babyy… I’m listening ⭐"></textarea>
+    <textarea placeholder="Type it here babyy… I’m listening👂🏻"></textarea>
     <button class="button" onclick="showMsg('Your words mean more than you know 💕','q3')">Finish ❤️</button>
 </div>
 
 <!-- Q3 -->
 <div class="screen" id="q3">
     <h2 class="question">What’s a funny memory of us that still makes you laugh?</h2>
-    <textarea placeholder="Type it here babyy… I’m listening ⭐"></textarea>
-    <button class="button" onclick="showMsg('I love how even our silly moments become memories I want to keep forever 🥺','q4')">Finish ❤️</button>
+    <textarea placeholder="Type it here babyy… I’m listening👂🏻"></textarea>
+    <button class="button" onclick="showMsg('I love how even our silly moments become memories I want to keep forever🥰','q4')">Finish ❤️</button>
 </div>
 
 <!-- Q4 -->
@@ -207,8 +207,8 @@ textarea{
 
 <!-- Q5 Funny -->
 <div class="screen" id="q5">
-    <h2 class="question">Will you always give me the first and last bite of the food? 🍰❤️</h2>
-    <button class="button glow yes-big" onclick="next('transition')">YES 💖</button>
+    <h2 class="question">Will you always give me the first and last bite of the food?🍰❤️</h2>
+    <button class="button glow yes-big" onclick="next('transition')">YES💯</button>
     <button class="small-no" onclick="shakeNo()">No</button>
     <p id="noText"></p>
 </div>
@@ -222,39 +222,39 @@ textarea{
 <!-- Love Screens -->
 <div class="screen" id="love1">
     <h2 class="question">The way you care for me, even in small things, even through my mood swings, makes me feel so loved🥹</h2>
-    <button class="button" onclick="next('love2')">Next 💌</button>
+    <button class="button" onclick="next('love2')">Next😚</button>
 </div>
 
 <div class="screen" id="love2">
     <h2 class="question">You lift me up even on my toughest days, you are my biggest supporter and cheerleader💪🏻</h2>
-    <button class="button" onclick="next('love3')">Next 💌</button>
+    <button class="button" onclick="next('love3')">Next🫂 </button>
 </div>
 
 <div class="screen" id="love3">
     <h2 class="question">Your smile, your laugh, your eyes… they’re my favorite parts of every day, Mooo🫠</h2>
-    <button class="button" onclick="next('love4')">Next 💌</button>
+    <button class="button" onclick="next('love4')">Next😩</button>
 </div>
 
 <div class="screen" id="love4">
-    <h2 class="question">I love every bit of this journey with you🫀</h2>
-    <button class="button" onclick="next('love5')">Next 💌</button>
+    <h2 class="question">I love every bit of this journey with you my loveeee🫀</h2>
+    <button class="button" onclick="next('love5')">Next💋</button>
 </div>
 
 <div class="screen" id="love5">
     <h2 class="question">Thank you for loving me the way you do💕</h2>
-    <button class="button glow" onclick="next('preFinal')">Next 💌</button>
+    <button class="button glow" onclick="next('preFinal')">Next🫀</button>
 </div>
 
 <!-- Pre Final -->
 <div class="screen" id="preFinal">
-    <h2 class="question">Alright, now get ready for the final question… this question decides your forever 😘</h2>
+    <h2 class="question">Alright, now get ready for the final question… this question decides your forever😌</h2>
     <button class="button glow" onclick="next('finalQ')">Ask me😉</button>
 </div>
 
 <!-- Final Question -->
 <div class="screen" id="finalQ">
-    <h1 class="title">AchuuuMooo… Will you be my Valentine forever? ❤️🌹</h1>
-    <button class="button glow yes-big" onclick="next('afterYes')">YES 💖</button>
+    <h1 class="title">AchuuuMooo… Will you be my Valentine forever?❤️🌹</h1>
+    <button class="button glow yes-big" onclick="next('afterYes')">YES😻</button>
     <button class="small-no" onclick="shakeNo()">No</button>
     <p id="noText2"></p>
 </div>
@@ -262,7 +262,7 @@ textarea{
 <!-- After Yes -->
 <div class="screen" id="afterYes">
     <h2 class="question">Your yes makes me so happy. And since you said yes, let me tell you something from my heart 💌… so listen closely…</h2>
-    <button class="button glow" onclick="next('letter')">Read 💌</button>
+    <button class="button glow" onclick="next('letter')">Read💌</button>
 </div>
 
 <!-- Final Letter -->
